@@ -4,16 +4,10 @@ import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
 /*import { Movie } from './movies.entity';*/
 
-
-
-
 @ApiTags('movies')
 @Controller('api/movies')
 export class MoviesController {
-  constructor(private readonly moviesService: MoviesService) { }
-
-
-
+  constructor(private readonly moviesService: MoviesService) {}
 
   @Get()
   @ApiOkResponse({ type: Movie, isArray: true })

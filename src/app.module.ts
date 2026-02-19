@@ -9,9 +9,6 @@ import { MoviesModule } from './movies/movies.module';
       isGlobal: true,
     }),
 
-
-
-
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,
@@ -23,10 +20,7 @@ import { MoviesModule } from './movies/movies.module';
       synchronize: false,
     }),
 
-
-
-
     MoviesModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

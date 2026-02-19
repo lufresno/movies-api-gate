@@ -3,27 +3,22 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Movie } from './entities/movie.entity';
 
-
 @Injectable()
 export class MoviesService {
- constructor(
-   @InjectRepository(Movie)
-   private readonly movieRepo: Repository<Movie>,
- ) { }
+  constructor(
+    @InjectRepository(Movie)
+    private readonly movieRepo: Repository<Movie>,
+  ) {}
 
-
- async listMovies(): Promise<Movie[]> {
-   return this.movieRepo.find({ order: { id: 'ASC' } });
- }
- /*async listMovies(): Promise<Movie[]> {
+  async listMovies(): Promise<Movie[]> {
+    return this.movieRepo.find({ order: { id: 'ASC' } });
+  }
+  /*async listMovies(): Promise<Movie[]> {
    const movies = await this.movieRepo.find();
    return movies.map((m) => ({ ...m, title: m.title.toUpperCase() }));
  }*/
 
-
-
-
- /*async listMovies(): Promise<Movie[]> {
+  /*async listMovies(): Promise<Movie[]> {
    return 'hola' a s any;
  }*/
 }

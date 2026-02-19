@@ -1,12 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-
 @Entity('movies')
 export class Movie {
- @PrimaryGeneratedColumn()
- id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-
- @Column({nullable: true})
- title: string;
+  @Column({ nullable: true })
+  title: string;
 }
